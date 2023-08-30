@@ -1,0 +1,7 @@
+.container li{
+    list-style: none;
+}
+
+.img-thumbnail{
+    background-image: none;
+}
