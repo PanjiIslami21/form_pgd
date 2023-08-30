@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css">
+    <script src="signature.js"></script>
     <title>Formulir</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   </head>
@@ -207,6 +208,7 @@
       </div>
       <button id="print" type="button" class="btn btn-primary mt-2" onclick="printJS('printJS-body', 'html' )">Print</button>
     </div>
+    
     <script>
       const printBtn = document.getElementById('print');
       printBtn.addEventListener('click', function(){
@@ -216,8 +218,6 @@
  
     <script>
       var wrapper = document.getElementById("signature-pad");
-      var clearButton = wrapper.querySelector("[data-action=clear]");
-      var savePNGButton = wrapper.querySelector("[data-action=save-png]");
       var canvas = wrapper.querySelector("canvas");
       var el_note = document.getElementById("note");
       var signaturePad;
