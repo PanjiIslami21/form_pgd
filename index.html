@@ -41,7 +41,7 @@
       <div class="row"> 
         <input class="col" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No.Form" >
         <div class="col-7"></div>
-        <input class="col" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tgl">
+        <input class="col" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tanggal">
       </div>
       <div class="container"></div>
       <div class="row">
@@ -207,6 +207,7 @@
           </div>
       </div>
       <button id="print" type="button" class="btn btn-primary mt-2" onclick="printJS('printJS-body', 'html' )">Print</button>
+      <button type="button" class="btn btn-danger mt-2" id="clear">Clear</button>
     </div>
     
     <script>
@@ -222,20 +223,20 @@
       var el_note = document.getElementById("note");
       var signaturePad;
       signaturePad = new SignaturePad(canvas);
-      clearButton.addEventListener("click", function (event) {
-         document.getElementById("note").innerHTML="The signature should be inside box";
-         signaturePad.clear();
+      document.getElementById('clear').addEventListener('click', function () {
+        signaturePad.clear();
       });
-      savePNGButton.addEventListener("click", function (event){
-         if (signaturePad.isEmpty()){
-           alert("Please provide signature first.");
-           event.preventDefault();
-         }else{
-           var canvas  = document.getElementById("the_canvas");
-           var dataUrl = canvas.toDataURL();
-           document.getElementById("signature").value = dataUrl;
-         }
-      });
+      //untuk mengsave image tanda tangan
+      //savePNGButton.addEventListener("click", function (event){
+       //  if (signaturePad.isEmpty()){
+        //  alert("Please provide signature first.");
+         //  event.preventDefault();
+        // }else{
+        //   var canvas  = document.getElementById("the_canvas");
+         //  var dataUrl = canvas.toDataURL();
+        //   document.getElementById("signature").value = dataUrl;
+      //   }
+    //  });
       function my_function(){
          document.getElementById("note").innerHTML="";
       }
